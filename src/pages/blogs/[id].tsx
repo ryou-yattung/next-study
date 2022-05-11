@@ -19,7 +19,7 @@ const Index: NextPage<Props> = ({ blogData }) => {
 //使えるパスの登録
 export const getStaticProps = async ({ params }) => {
   const fetchBlogData = await fetch(
-    `${process.env.MICROCMS_ENDPOINT}/blogs/${params.id}`,
+    `${process.env.MICROCMS_ENDPOINT}blogs/${params.id}`,
     {
       headers: {
         "Content-Type": "application/json",
@@ -38,7 +38,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async ({ params }) => {
-  const fetchBlogData = await fetch(`${process.env.MICROCMS_ENDPOINT}/blogs`, {
+  const fetchBlogData = await fetch(`${process.env.MICROCMS_ENDPOINT}blogs`, {
     headers: {
       "Content-Type": "application/json",
       "X-MICROCMS-API-KEY": process.env.X_MICROCMS_API_KEY,

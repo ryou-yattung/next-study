@@ -21,7 +21,7 @@ const IndexPage: NextPage<Props> = ({ blogData }) => {
 };
 
 export const getStaticProps = async () => {
-  const fetchBlogData = await fetch(`${process.env.MICROCMS_ENDPOINT}/blogs`, {
+  const fetchBlogData = await fetch(`${process.env.MICROCMS_ENDPOINT}blogs`, {
     headers: {
       "Content-Type": "application/json",
       "X-MICROCMS-API-KEY": process.env.X_MICROCMS_API_KEY,
